@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forest Cover Type Prediction</title>
+    <style>
+        body {
+            background-color: white;
+            color: black;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        form {
+            max-width: 500px;
+            margin: auto;
+            border: 1px solid black;
+            padding: 20px;
+            border-radius: 10px;
+            box-sizing: border-box;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid black;
+            border-radius: 5px;
+            background-color: white;
+            color: black;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: black;
+            color: white;
+            cursor: pointer;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            width: 100%;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #333;
+        }
+
+        .prediction-result {
+            max-width: 500px;
+            margin: 20px auto;
+            border: 1px solid black;
+            padding: 15px;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Forest Cover Type Prediction</h2>
+
+    <!-- Prediction Result Box -->
+    {% if cover_type_prediction %}
+    <div class="prediction-result">
+        <strong>Forest Cover Type:</strong> {{ cover_type_prediction }}
+    </div>
+    {% endif %}
+
+    <!-- Form -->
+    <form action="/predict" method="POST">
+
+        <!-- Numerical Inputs -->
+        <label for="Elevation">Elevation:</label>
+        <input type="number" id="Elevation" name="Elevation" required>
+
+        <label for="Aspect">Aspect:</label>
+        <input type="number" id="Aspect" name="Aspect" required>
+
+        <label for="Slope">Slope:</label>
+        <input type="number" id="Slope" name="Slope" required>
+
+        <label for="Horizontal_Distance_To_Hydrology">Horizontal Distance to Hydrology:</label>
+        <input type="number" id="Horizontal_Distance_To_Hydrology" name="Horizontal_Distance_To_Hydrology" required>
+
+        <label for="Vertical_Distance_To_Hydrology">Vertical Distance to Hydrology:</label>
+        <input type="number" id="Vertical_Distance_To_Hydrology" name="Vertical_Distance_To_Hydrology" required>
+
+        <label for="Horizontal_Distance_To_Roadways">Horizontal Distance to Roadways:</label>
+        <input type="number" id="Horizontal_Distance_To_Roadways" name="Horizontal_Distance_To_Roadways" required>
+
+        <label for="Hillshade_9am">Hillshade at 9am:</label>
+        <input type="number" id="Hillshade_9am" name="Hillshade_9am" required>
+
+        <label for="Hillshade_Noon">Hillshade at Noon:</label>
+        <input type="number" id="Hillshade_Noon" name="Hillshade_Noon" required>
+
+        <label for="Hillshade_3pm">Hillshade at 3pm:</label>
+        <input type="number" id="Hillshade_3pm" name="Hillshade_3pm" required>
+
+        <label for="Horizontal_Distance_To_Fire_Points">Horizontal Distance to Fire Points:</label>
+        <input type="number" id="Horizontal_Distance_To_Fire_Points" name="Horizontal_Distance_To_Fire_Points" required>
+
+        <!-- Dropdown for Wilderness Area -->
+        <label for="Wilderness_Area">Wilderness Area:</label>
+        <select id="Wilderness_Area" name="Wilderness_Area" required>
+            <option value="">--Select--</option>
+            <option value="1">Wilderness Area 1</option>
+            <option value="2">Wilderness Area 2</option>
+            <option value="3">Wilderness Area 3</option>
+            <option value="4">Wilderness Area 4</option>
+        </select>
+
+        <!-- Dropdown for Soil Type -->
+        <label for="Soil_Type">Soil Type:</label>
+        <select id="Soil_Type" name="Soil_Type" required>
+            <option value="">--Select--</option>
+            {% for i in range(1, 41) %}
+            <option value="{{ i }}">Soil Type {{ i }}</option>
+            {% endfor %}
+        </select>
+
+
+        <input type="submit" value="Submit">
+    </form>
+
+</body>
+
+</html>

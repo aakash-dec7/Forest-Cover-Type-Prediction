@@ -7,72 +7,85 @@
     <title>Forest Cover Type Prediction</title>
     <style>
         body {
-            background-color: white;
-            color: black;
-            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #4e6c5e, #1f3505);
+            color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             padding: 20px;
         }
 
+        h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 30px;
+        }
+
         form {
-            max-width: 500px;
+            max-width: 600px;
             margin: auto;
-            border: 1px solid black;
-            padding: 20px;
-            border-radius: 10px;
-            box-sizing: border-box;
+            background-color: #162a1f;
+            border: 1px solid #ccc;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(5px);
         }
 
         label {
             display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
+            margin-bottom: 6px;
+            font-weight: 600;
         }
 
         input[type="text"],
         input[type="number"],
         select {
             width: 100%;
-            padding: 8px;
-            margin-bottom: 15px;
-            border: 1px solid black;
-            border-radius: 5px;
-            background-color: white;
-            color: black;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
             box-sizing: border-box;
+            font-size: 1rem;
         }
 
         input[type="submit"] {
-            background-color: black;
+            background: #275d39;
             color: white;
             cursor: pointer;
-            padding: 10px 15px;
+            padding: 12px 20px;
             border: none;
-            border-radius: 5px;
+            border-radius: 8px;
             width: 100%;
+            font-size: 1rem;
+            margin-top: 5%;
+            transition: background 0.3s ease;
         }
 
         input[type="submit"]:hover {
-            background-color: #333;
+            background: #09a048;
         }
 
         .prediction-result {
-            max-width: 500px;
-            margin: 20px auto;
-            border: 1px solid black;
-            padding: 15px;
-            border-radius: 10px;
-            background-color: #f9f9f9;
+            max-width: 600px;
+            margin: 30px auto;
+            border: 1px solid #322929;
+            padding: 20px;
+            border-radius: 15px;
+            background-color: transparent;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
         }
     </style>
 </head>
 
 <body>
-    <h2>Forest Cover Type Prediction</h2>
+    <h2>🌲 Forest Cover Type Prediction 🌲</h2>
 
     <!-- Prediction Result Box -->
     {% if cover_type_prediction %}
     <div class="prediction-result">
-        <strong>Forest Cover Type:</strong> {{ cover_type_prediction }}
+        <strong>{{ cover_type_prediction }}</strong> 
     </div>
     {% endif %}
 
@@ -129,10 +142,8 @@
             {% endfor %}
         </select>
 
-
-        <input type="submit" value="Submit">
+        <input type="submit" value="Predict Cover Type">
     </form>
-
 </body>
 
 </html>

@@ -11,7 +11,7 @@ inference = Inference()
 
 @app.route("/", methods=["GET"])
 def home_page():
-    return render_template("index.html", cancer_prediction=None)
+    return render_template("index.html", cover_type_prediction="Forest Cover Type")
 
 
 @app.route("/predict", methods=["POST"])
@@ -60,12 +60,12 @@ def analyze():
         # Prediction using the Inference model
         prediction = inference.predict(input_data=input_data.values)
 
-        return render_template("index.html", cancer_prediction=str(prediction))
+        return render_template("index.html", cover_type_prediction=str(prediction))
 
     except Exception as e:
         logger.error(f"Prediction error: {e}", exc_info=True)
         return render_template(
-            "index.html", cancer_prediction="An error occurred. Please try again later."
+            "index.html", cover_type_prediction="An error occurred. Please try again later."
         )
 
 

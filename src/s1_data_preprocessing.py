@@ -39,6 +39,8 @@ class DataPreprocessing:
         """
         logger.info("Saving preprocessed features and target to disk...")
 
+        os.makedirs(self.save_dataset_dir, exist_ok=True)
+
         # Construct paths for saving
         X_path = os.path.join(self.save_dataset_dir, "X.csv")
         y_path = os.path.join(self.save_dataset_dir, "y.csv")

@@ -43,7 +43,7 @@ class Inference:
             prediction = self.model.predict(input_data).item()
             prediction_label = Cover_Type[prediction + 1]
             logger.info(f"Prediction successful: {prediction_label}")
-            return prediction
+            return prediction_label
         except Exception as e:
             logger.error("Prediction failed.", exc_info=True)
             raise RuntimeError("Prediction failed.") from e

@@ -185,7 +185,7 @@ http://localhost:3000/
 
 ## Conclusion
 
-This project demonstrates the effective use of ensemble learning methods—Random Forest, XGBoost, and AdaBoost—for multiclass classification of forest cover types using rich cartographic data. Among the models tested, XGBoost outperformed others in cross-validation, showing its strength in handling structured datasets with complex feature interactions. While AdaBoost showed relatively lower performance, its inclusion highlights the comparative strengths of boosting techniques. With a well-defined pipeline managed by DVC, reproducibility and scalability are integral parts of the project, making it easy to retrain or improve the model as needed.
+This project demonstrates the effective use of ensemble learning methods - Random Forest, XGBoost, and AdaBoost - for multiclass classification of forest cover types using rich cartographic data. Among the models tested, XGBoost outperformed others in cross-validation, showing its strength in handling structured datasets with complex feature interactions. While AdaBoost showed relatively lower performance, its inclusion highlights the comparative strengths of boosting techniques. With a well-defined pipeline managed by DVC, reproducibility and scalability are integral parts of the project, making it easy to retrain or improve the model as needed.
 
 ## License
 

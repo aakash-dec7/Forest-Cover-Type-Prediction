@@ -1,6 +1,6 @@
 # Forest Cover Type Prediction
 
-This repository focuses on predicting forest cover types based on cartographic variables from the **Roosevelt National Forest** in **Northern Colorado**. Using traditional machine learning algorithms, the model classifies 30m x 30m land patches into one of seven forest cover types such as Spruce/Fir, Aspen, or Douglas-fir.
+This repository focuses on predicting forest cover types based on cartographic variables from the **Roosevelt National Forest** in **Northern Colorado**. Using Machine Learning algorithms, the model classifies 30m x 30m land patches into one of seven forest cover types such as Spruce/Fir, Aspen, or Douglas-fir.
 
 ## Model Architecture
 

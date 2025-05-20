@@ -50,7 +50,7 @@ This project leverages three powerful ensemble learning classifiers - `RandomFor
 
 ## Dataset
 
-This dataset is a structured tabular dataset used for forest cover type prediction based on various topographic and soil features. Each row represents a unique location in the Roosevelt National Forest of northern Colorado, USA. The goal is to predict the `Cover_Type` (categorical label from 1 to 7) indicating the type of forest cover for that location.
+This dataset is a structured tabular dataset used for forest cover type prediction based on various topographic and soil features. Each row represents a unique location in the Roosevelt National Forest of Northern Colorado, USA. The goal is to predict the `Cover_Type` (categorical label from 1 to 7) indicating the type of forest cover for that location.
 
 **Key Features:**
 
